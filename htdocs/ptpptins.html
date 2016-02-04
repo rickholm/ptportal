@@ -1,0 +1,60 @@
+<!-- $top$ -->
+Cache-Control: no-cache
+Cache-Control: max-age=0
+Cache-Control: must-revalidate
+Pragma: no-cache
+Expires: Tue, 08 Apr 1997 17:20:00 GMT
+Content-type: text/html
+
+<!DOCTYPE html>
+<html>
+<head>
+<META http-equiv="pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+<title>Patient Insurance</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="index">
+<div id="wrapper">
+<div id="branding">
+<img src="graphics/palmtree.jpg">
+<div id="branding-right">
+<br />
+<h1>Patient Insurance</h1>
+</div>       
+</div><!-- End branding -->
+
+<!-- $ptins$ -->
+<div id="content">
+<form action="ptpptins.pgm" method="post">
+<script language=javascript>                                                    
+document.write('<input type="hidden" name="usrspcname" value="<!-- %usrspcname% -->">');
+document.write('<input type="hidden" name="usrspclib" value="<!-- %usrspclib% -->">');
+</script>            
+</form>		
+
+<table class="ptsummary">
+<tr><th>Name:</th><td><!-- %ptname% --></td></tr>
+<tr><th>Patient Id:</th><td><!-- %ptid% --></td></tr>
+</table>
+<br />
+<!-- $showptins$ -->
+<table id="ptins">
+<tr><th>Group:</th><td><!-- %group% --></td><th>Payer:</th><td><!-- %insname% --></td></tr>
+<tr><th>Group Id:</th><td><!-- %groupid% --></td><th></th><td><!-- %insaddr1% --></td></tr>
+<tr><th>Pt Rel To Sub:</th><td><!-- %relsub% --></td><th></th><td><!-- %insaddr2% --></td></tr>
+<tr><th>Co-Pay:</th><td><!-- %copay% --></td><th></th><td><!-- %inscsz% --></td></tr>
+<tr><th>Subscriber:</th><td><!-- %subscriber% --></td><th></th><td></td></tr>
+<tr><th>Birth Date:</th><td><!-- %subbirthdate% --></td><th>Gender:</th><td><!-- %subgender% --></td></tr>
+<tr><th>Effective Date:</th><td><!-- %effdate% --></td><th>Expiration Date:</th><td><!-- %expdate% --></td></tr>
+</table>    
+</div><!-- End content -->
+<!-- $noptins$ -->
+<h2>No patient insurance found</h2>
+</div><!-- End content -->
+<!-- $invptins$ -->	
+<h2>Invalid patient insurance data</h2>
+</div><!-- End content -->
+

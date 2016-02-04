@@ -1,0 +1,101 @@
+<!-- $top$ -->
+Cache-Control: no-cache
+Cache-Control: max-age=0
+Cache-Control: must-revalidate
+Pragma: no-cache
+Expires: Tue, 08 Apr 1997 17:20:00 GMT
+Content-type: text/html
+
+<!DOCTYPE html>
+<html>
+<head>
+<META http-equiv="pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+<title>Portal Activity</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/dialog.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="wrapper">
+<div id="branding">
+<img src="graphics/palmtree.jpg" />
+<div id="branding-right">
+<br />
+<h1>Portal Activity</h1>
+</div>       
+</div><!-- End branding -->
+
+<!-- $content$ -->
+<div id="content">
+
+<form action="ptpactvy.pgm" method="post" id="ptpactvy" name="ptpactvy">
+
+<script type="text/javascript">                                                    
+document.write('<input type="hidden" name="usrspcname" value="<!-- %usrspcname% -->">');
+document.write('<input type="hidden" name="usrspclib" value="<!-- %usrspclib% -->">');  
+document.write('<input type="hidden" name="npButtonSts" value="noclick" id="npButtonSts">');        		
+</script>            		
+
+<!-- $ptsummary$ -->
+<table class="ptsummary">
+<tr><th>Name:</th><td><!-- %ptname% --></td></tr>
+<tr><th>Patient Id:</th><td><!-- %ptid% --></td></tr>
+</table>
+<br />
+
+<!-- $seltable$ -->
+<div class="seltable">
+<table>
+<tr><th>Sequence:</th>
+<td style="width:15em">
+<select id="seqopt" name="seqopt">
+<option value="descending" <!-- %seqseldsc% -->>Date Descending-Newest First</option>
+<option value="ascending" <!-- %seqselasc% -->>Date Ascending-Oldest First</option>
+</select>
+</td>
+<td style="text-align:left">
+<input type="submit" value="Refresh">
+</td>
+</tr>
+</table>
+
+</div><!-- seltable -->
+<br />
+
+<!-- $next-page$ -->
+<div>
+
+<!-- $show-nextpagebutton$ -->
+<input type="button" value="Next Page" onclick="setNPClick()">
+<script type="text/javascript">
+function setNPClick(){
+  document.getElementById("npButtonSts").value="click";
+  document.forms["ptpactvy"].submit(); 
+}
+</script>
+
+<br />
+<!-- $actvy-tbl-str$ -->
+<div id="actvy">
+<table class="tablesu">
+<tr><th class="tableh" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th class="tableh" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th class="tableh" align="left">Activity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr>
+<!-- $actvy-tbl-row$ -->
+<tr><td class="tabled" style="width:6em"><!-- %actvy-date% --></td><td class="tabled"style="width:6.5em"><!-- %actvy-time% --></td><td class="tabled" style="width:30em"><!-- %actvy-desc% --></td></tr>
+<!-- $actvy-tbl-end$ -->
+</table>
+</div>
+
+<!-- $end-next-page$ -->
+</div><!-- nextpage -->
+
+<!-- $no-actvy-found$ -->
+<h2>No portal activity found</h2>
+
+<!-- $end-content$ -->
+</form>
+</div><!-- End content -->

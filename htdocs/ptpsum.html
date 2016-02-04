@@ -1,0 +1,58 @@
+<!-- $top$ -->
+Cache-Control: no-cache
+Cache-Control: max-age=0
+Cache-Control: must-revalidate
+Pragma: no-cache
+Expires: Tue, 08 Apr 1997 17:20:00 GMT
+Content-type: text/html
+
+<!DOCTYPE html>
+<html>
+<head>
+<META http-equiv="pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+<title>Summary</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="index">
+<div id="wrapper">
+<div id="branding">
+<img src="graphics/palmtree.jpg" />
+<div id="branding-right">
+<br />
+<h1>Summary</h1>
+</div>       
+</div><!-- End branding -->
+
+<!-- $ptsummary$ -->
+<div id="content">
+<form action="ptpsum.pgm" method="post">
+<script language=javascript>                                                    
+document.write('<input type="hidden" name="usrspcname" value="<!-- %usrspcname% -->">');
+document.write('<input type="hidden" name="usrspclib" value="<!-- %usrspclib% -->">');
+</script>            
+</form>		
+
+<table class="ptsummary">
+<tr><th>Name:</th><td><!-- %ptname% --></td></tr>
+<tr><th>Patient Id:</th><td><!-- %ptid% --></td></tr>
+</table>
+<br />
+<table class="ptsummary">
+<tr><th>A/R Code:</th><td><!-- %arcode% --></td></tr>
+<tr><th>Location:</th><td><!-- %loccode% --></td></tr>
+<tr><th>Last Activity:</th><td><!-- %lastlogon% --></td></tr>
+</table>
+<br />
+<table class="ptsummary2">
+<tr><th></th><td class="coltitle"><!-- %coltitle1% --></td><td class="coltitle"><!-- %coltitle2% --></td><td class="coltitle"><!-- %coltitle3% --></td></tr>
+<tr><th>Billing Name:</th><td><!-- %billname% --></td><td><!-- %guarname% --></td><td></td></tr>
+<tr><th>Line One:</th><td><!-- %billaddr1% --></td><td><!-- %guaraddr1% --></td><td><!-- %ptaddr1% --></td></tr>
+<tr><th>Line Two:</th><td><!-- %billaddr2% --></td><td><!-- %guaraddr2% --></td><td><!-- %ptaddr2% --></td></tr>
+<tr><th>City, State Zip:</th><td><!-- %billcsz% --></td><td><!-- %guarcsz% --></td><td><!-- %ptcsz% --></td></tr>
+<tr><th>Phone:</th><td><!-- %billphone% --></td><td><!-- %guarphone% --></td><td><!-- %ptphone% --></td></tr>
+</table>
+      
+</div><!-- End content -->

@@ -1,0 +1,133 @@
+<!-- $top$ -->
+Cache-Control: no-cache
+Cache-Control: max-age=0
+Cache-Control: must-revalidate
+Pragma: no-cache
+Expires: Tue, 08 Apr 1997 17:20:00 GMT
+Content-type: text/html
+
+<!DOCTYPE html>
+<html>
+<head>
+<META http-equiv="pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+<title>Appointments</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/dialog.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="index">
+<div id="wrapper">
+<div id="branding">
+<img src="graphics/palmtree.jpg" />
+<div id="branding-right">
+<br />
+<h1>Appointments</h1>
+</div>       
+</div><!-- End branding -->
+
+<!-- $content$ -->
+<div id="content">
+
+<form action="ptpappt.pgm" method="post" id="ptpappt" name"ptpappt">
+
+<script type="text/javascript">                                                    
+document.write('<input type="hidden" name="usrspcname" value="<!-- %usrspcname% -->">');
+document.write('<input type="hidden" name="usrspclib" value="<!-- %usrspclib% -->">'); 
+document.write('<input type="hidden" name="npButtonSts" value="noclick" id="npButtonSts">');        		          
+document.write('<input type="hidden" name="ppButtonSts" value="noclick" id="ppButtonSts">');
+document.write('<input type="hidden" name="rfButtonSts" value="noclick" id="rfButtonSts">');
+</script>  
+
+<!-- $ptsummary$ -->
+<table class="ptsummary">
+<tr><th>Name:</th><td><!-- %ptname% --></td></tr>
+<tr><th>Patient Id:</th><td><!-- %ptid% --></td></tr>
+</table>
+<br />
+
+<!-- $seltable$ -->
+<div id="apptDspOpt">
+<table style="width:45em">
+<tr><th style="width:8.5em"</th><th style="width:14em"</th><th style="width:5em"</th><th style="width:15em"</th>
+</tr>
+<tr>
+<td>Information Shown:</td>
+<td><select id="dtaopt" name="dtaopt">
+<option value="apptonly" <!-- %dtaselappt% -->>Appointments Only</option>
+<option value="recallonly" <!-- %dtaselrecall% -->>Recalls Only</option>
+<option value="both" <!-- %dtaselboth% -->>Both Appointments and Recalls</option>
+</select>
+</td>
+<td>Sequence:</td>
+<td><select id="seqopt" name="seqopt">
+<option value="descnding" <!-- %seqseldsc% -->>Date Descending-Newest First</option>
+<option value="ascending" <!-- %seqselasc% -->>Date Ascending-Oldest First</option>
+</select>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td>
+<br />
+<input type="button" value="Refresh" onclick="setRfClick()">
+<script type="text/javascript">
+function setRfClick(){
+  document.getElementById("rfButtonSts").value="click";
+  document.forms["ptpappt"].submit(); 
+}
+</script>
+</td>
+<!-- $show-nextpagebutton$ -->
+<td>
+<br />
+<input type="button" value="Next Page" onclick="setNPClick()">
+<script type="text/javascript">
+function setNPClick(){
+  document.getElementById("npButtonSts").value="click";
+  document.forms["ptpappt"].submit(); 
+}
+</script>
+</td>
+<!-- $show-prevpagebutton$ -->
+<td>
+<br />
+<input type="button" value="Previous Page" onclick="setPPClick()">
+<script type="text/javascript">
+function setPPClick(){
+  document.getElementById("ppButtonSts").value="click";
+  document.forms["ptpappt"].submit(); 
+}
+</script>
+</td>
+<!-- $seltable-end$ -->
+</tr>
+</table>
+</div>
+
+<br />
+<!-- $apt-tbl-str$ -->
+<div id="appointments">
+<table class="tablesu" style="width:44em">
+<tr><th class="tableh" style="width:6em" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th class="tableh" style="width:5.5em" align="left">&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th class="tableh" style="width:10em" align="left">Provider&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th class="tableh" style="width:12em" align="left">Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th class="tableh" style="width:12em" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
+<!-- $apt-tbl-row$ -->
+<tr><td class="tabled"><!-- %apt-date% --></td><td class="tabled"><!-- %apt-time% --></td><td class="tabled"><!-- %apt-prov% --></td><td class="tabled"><!-- %apt-desc% --></td><td class="tabled"><!-- %apt-status% --></td></tr>
+<!-- $apt-tbl-end$ -->
+</table>     
+
+<!-- $end-next-page$ -->
+</div><!-- nextpage -->
+
+<!-- $no-apt-found$ -->
+<h2>No appointments or recalls found</h2>
+
+<!-- $end-content$ -->
+</form>
+</div><!-- End content -->
+

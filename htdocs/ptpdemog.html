@@ -1,0 +1,51 @@
+<!-- $top$ -->
+Cache-Control: no-cache
+Cache-Control: max-age=0
+Cache-Control: must-revalidate
+Pragma: no-cache
+Expires: Tue, 08 Apr 1997 17:20:00 GMT
+Content-type: text/html
+
+<!DOCTYPE html>
+<html>
+<head>
+<META http-equiv="pragma" content="no-cache">
+<META http-equiv="Expires" content="-1">
+<title>Demographics</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="index">
+<div id="wrapper">
+<div id="branding">
+<img src="graphics/palmtree.jpg" />
+<div id="branding-right">
+<br />
+<h1>Demographics</h1>
+</div>       
+</div><!-- End branding -->
+
+<!-- $ptdemog$ -->
+<div id="content">
+<form action="ptpdemog.pgm" method="post">
+<script language=javascript>                                                    
+document.write('<input type="hidden" name="usrspcname" value="<!-- %usrspcname% -->">');
+document.write('<input type="hidden" name="usrspclib" value="<!-- %usrspclib% -->">');
+</script>            
+</form>
+
+<table class="ptsummary">
+<tr><th>Name:</th><td><!-- %ptname% --></td></tr>
+<tr><th>Patient Id:</th><td><!-- %ptid% --></td></tr>
+</table>
+<br />
+<table id="ptdemog">
+<tr><th>Birthdate:</th><td><!-- %birthdate% --></td><th>Gender:</th><td><!-- %gender% --></td></tr>
+<tr><th>SSN:</th><td><!-- %ssn% --></td><th>Ethnic:</th><td><!-- %ethcde% --></td></tr>
+<tr><th>Rel To Guarantor:</th><td><!-- %reltog% --></td><th>Marital Status:</th><td><!-- %maritalsts% --></td></tr>
+<tr><th>Mother's Maiden Name:</th><td><!-- %mothmaidn% --></td><th>Language:</th><td><!-- %prilang% --></td></tr>
+<tr><th>Deceased Date:</th><td><!-- %decdate% --></td><th>Patient Status:</th><td><!-- %ptstscde% --></td></tr>
+<tr><th>Primary Provider:</th><td><!-- %priprov% --></td><th>Referring Provider:</th><td><!-- %refprov% --></td></tr></table>
+      
+</div><!-- End content -->

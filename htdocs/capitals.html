@@ -1,0 +1,105 @@
+<as400>top
+Content-type: text/html
+Expires:0
+
+<html>
+<head><title>Capital cities</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="DOCUMENTCOUNTRYCODE" value="us"/>
+<meta name="DOCUMENTLANGUAGECODE" value="us"/>
+<link href="/cgidev/css/exhibit.css" rel="stylesheet" type="text/css">
+<link href="/cgidev/css/exhibitPrint.css" rel="stylesheet" type="text/css" media="print">
+<style TYPE="text/css">
+a.src {font-size: 11px;  font-style: italic;}
+ul {margin: 0}
+.border4 {border: #666666 1px solid; padding: .04in;}
+.src {font-size: 11px;  font-style: italic;}
+.padleft {padding-left: 30px;}
+</style>
+
+
+</HEAD>
+
+<BODY TEXT="black" LINK="blue" VLINK="blue" ALINK="blue" BGCOLOR="white" /%onload%/>
+
+<TABLE>
+<TR><TD VALIGN="TOP">
+        <form name="ctrForm" method="post">
+        <table>
+        <tr><td align="center" colspan="2"><h2>Capital cities</h2></td></tr>
+        <tr><td colspan="2">Select a country:<br>
+                <select name="xcountry" onChange=document.ctrForm.submit()>
+                <option value="">
+<as400>selectRow
+                 <option value="/%ycountry%/" /%selected%/>/%ycountry%/
+<as400>selectEnd
+                 </select>
+                 </td></tr>
+         </table>
+         </form>
+
+<as400>capital
+        <table class="padleft">
+        <tr><td>Country:</td><td>/%capctr%/</td></tr>
+        <tr><td>Capital city:</td><td>/%capcity%/</td></tr>
+        <tr><td>Latitude:</td><td>/%caplat%/</td></tr>
+        <tr><td>Longitude:</td><td>/%caplon%/</td></tr>
+        <tr><td height="50">&nbsp;</td></tr>
+        </table>
+        <table cellspacing="0" cellpadding="0" width="100%">
+        <tr><td align="center">
+                <table class="border4">
+                <tr><td class="src">Display sources:
+                        <ul>
+                        <li><a class="src" href="/cgidev/html/capitals.txt" target="_blank">html</a>
+                        <li><a class="src" href="/cgidev2p/dspsrc.pgm?cgiinp01=cgidev2&cgiinp02=qrpglesrc&cgiinp03=capitals" target="_blank">rpg</a>
+                        </ul>
+                        </td></tr>
+                </table>
+                </td></tr>
+        </table>
+        </TD>
+
+<as400>googlemap
+<!======== The following code is NOT related to the dropdown list. It shows how to display a Google Map =======>
+    <TD VALIGN="TOP">
+        <table>
+        <tr><td><table border=0>
+                <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+                <script type="text/javascript">
+                function GoogleMap() {
+                   var myLatlng = new google.maps.LatLng(/%caplat%/,/%caplon%/);
+                   var myOptions = {
+                   zoom: 5,
+                   center: myLatlng,
+                   navigationControl: true,
+                   scaleControl: true,
+                   mapTypeControl: true,
+                   mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                var map = new google.maps.Map(document.getElementById("my_map"), myOptions);
+                var image = '/cgidev/graphics/google_marker_sq.png';
+                var beachMarker = new google.maps.Marker({
+                                  position: myLatlng,
+                                  map: map,
+                                  icon: image
+                                  });
+                }
+                </script>
+                <tr><td><table>
+                        <tr><td align=center><h2>Google Map</h2></td></tr>
+                        <tr><td><div id="my_map" style="width:800px;height:400px;"></div></td></tr>
+                        </table>
+                        </td></tr>
+                 </table>
+                 </td></tr>
+         </table>
+         </TD>
+
+<as400>bottom
+         </TR>
+</TABLE>
+</body>
+</html>
+
