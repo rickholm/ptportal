@@ -1,0 +1,57 @@
+/* Dialog box CSS */
+
+#dialogoverlay {
+  display: none;
+  opacity: .8;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #ffffff;
+  width: 100%;
+  z-index: 10;
+}
+  
+#dialogbox {
+  display: none;
+  position: fixed;
+  background: #626262;
+  border-radius: 3px;
+  border-style:: solid;
+  border-width: 3px;
+  border-color: #626262;
+  width: 400px;
+  z-index: 10;
+}
+
+#dialogbox > div{ 
+  background: #ffffff;
+  margin: 2px;
+}
+
+#dialogbox > div > #dialogboxhead {
+  background: #efefef;
+  font-size: 19px;
+  padding: 10px;
+  color: #000;
+  text-align: center;
+}
+
+#dialogbox > div> #dialogboxbody{
+  background: #ffffff;
+  padding: 20px;
+  color: #000;
+}
+
+#dialogbox > div > #dialogboxfoot {
+  background: #ffffff;
+  padding: 7px;
+  text-align: right;
+}
+
+  
+#nextpagebutton {
+  display: none;
+  background: #ffffff;
+  color: #000;
+}
+

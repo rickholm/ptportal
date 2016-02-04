@@ -1,0 +1,412 @@
+/* Universal style rule */
+*{
+ /* Block all browser default margins and padding */
+  margin:0;
+  padding:0;
+ /* Temporary borders */
+ /* border:dashed 1px #f00; */ 
+}
+
+#wrapper{
+  width: 60em;
+  /* Center the wrapper */
+  margin:1em 0 0 5em;
+  /*  margin:20px auto 0 auto; */
+  /* Required for absolutely-positioned layout only */
+  position:relative;
+}
+
+#branding{
+  position:relative;
+  height:5em;
+} 
+
+/* Fixes the mysterious image gap */
+#branding img{
+  display:block;
+  height:90%;
+  float:left;
+}
+
+#branding-right h1{
+  color:#f7ae47; 
+  float:right;
+  border:none;
+}
+
+/* Navbar division */
+#navbar{
+  margin-left: auto;
+  margin-right: auto;
+  height:1.6em;
+   /* For absolutely-positioned navbar */
+  position:absolute;
+  top:7em; /* Same as branding div height */
+  left:0; /* Same as leftcolumn width */
+  width:80em; /* Layout width minus leftcolumn width */
+
+}
+
+/* Remove bullets from ul in the navbar */
+#navbar ul{
+  list-style-type:none;
+}
+
+/* List items in the navbar */
+#navbar li{
+  float:left;
+  /* Required for drop-down menus */
+  position:relative;
+}
+
+/* Applies to navbar links, unvisited and visited */
+#navbar a,
+#navbar a:link,
+#navbar a:visited{
+  text-decoration:none;
+  font-family:Verdana, Geneva, Arial, Sans-Serif;
+ /* font-size:80%;  */
+  display:block;
+  height:2em;
+  width:8em;
+  text-align:center;
+  line-height:2em;
+  outline-style:none;
+}
+
+/* Navbar hover, active, and current page links */
+#navbar a:hover,
+#navbar a:active,
+.summary #nav-summary a,
+.demographics #nav-demographics a,
+.insurance #nav-insurance a,
+.wine-club #nav-wine-club a,
+.news-events #nav-news-events a,
+.logout #nav-logout a{
+  background:#404040;
+  color:#f7ae47;
+}
+
+/* Applies to drop-down menus in navbar */
+#navbar li ul{
+  position:absolute;
+  z-index:100;
+  visibility:hidden;
+  border:solid 1px #328e13;
+  border-right: solid 2px #328e13;
+  border-bottom: solid 2px #328e13;
+}
+
+/* Make drop-down visible on navbar hover */
+#navbar li:hover ul,
+#navbar li a:hover ul{ /* IE6 hack */
+  visibility:visible;
+  top:1.6em;
+  left:0;
+}
+
+/* Applies to links on the drop-down menu */
+#navbar li:hover ul li a,
+#navbar li a:hover ul li a{ /* IE6 hack */
+  background:#404040; /* Removes background image */
+  color:#328e13;
+  text-align:left;
+  display:block;
+  width:12em;
+  padding:0 0 0 1em;
+  height:auto;
+}
+
+/* Hover on drop-down menu links */
+#navbar li:hover ul li a:hover,
+#navbar li a:hover ul li a:hover{ /* IE6 hack */
+  background: #404040;
+  color:#f7ae47;
+}
+
+/* IE6 hack applies to its table drop-down */
+#navbar table {
+  margin:-1px;
+  border-collapse:collapse;
+  position:absolute;
+  top:0.5em;
+  left:0;
+  z-index:100;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#content{
+  position:absolute;
+  top:10em; 
+  color:#000;
+}
+
+#content-center h1, #content-center h2{
+  text-align:center;
+  margin:.75em;
+}
+
+
+/* Styles h1, h2, and h3 style rules in the content division */
+#content h1, #content h2, #content h3{
+  font-weight:normal;
+  font-variant:small-caps;
+}
+
+/* Size h1 headings in the content division */
+#content h1{
+  font-size:2em;
+  font-style:normal;
+  margin:1em 0 1em 1em;
+}
+
+/* Size h2 headings in the content division */
+#content h2{
+  font-size:1.5em;
+}
+/* Size h3 headings in the content division */
+#content h3{
+  font-size:1.25em;
+  font-style:normal;
+}
+
+/* Applies to unordered lists in the content division */
+#content ul,#content ol{
+  padding:10px 0 10px 40px;
+}
+
+#content p{
+  line-height:1.5em;
+}
+
+#content a{
+  color:#f7ae47;
+}
+
+#signon {
+  width:20em;
+  float:left;
+ }
+
+#signon-head {
+  padding:1em;
+ }
+ 
+#signon-data {
+  padding:1em;
+ }
+ 
+#footer2 {
+  clear:both;
+  top:45em;
+  width:60em;
+  position:absolute;
+  color:#f7ae47;
+  text-align:center;
+  font-size:0.8em;
+}
+
+#footer2 p{
+  line-height:1.5em;
+}
+
+#footer2 a:link,
+#footer2 a:visited{
+/* No underline on links */
+  text-decoration:none;
+  color:#328e13; 
+  outline-style:none; 
+}
+
+#footer2 a:hover,
+#footer2 a:active{
+  color:#f7ae47;  
+}
+
+.center-text {
+  text-align: center;
+}
+
+.hotkey{
+  text-decoration:underline;
+}
+
+/* Center image between margins */
+img.center {
+  display: block;
+  margin:0;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.ptsummary {
+   margin-left: 0px;
+}
+
+.ptsummary th {
+   width: 8em;
+   padding-top: .5em;
+   text-align: left;
+   font-weight: bold;
+}
+
+.ptsummary td{
+   width: 20em;
+   padding-top: .5em;
+   text-align: left;
+}
+
+.ptsummary2 {
+   margin-left: 0px;
+}
+
+.ptsummary2 th {
+   width: 8em;
+   padding-top: .5em;
+   text-align: left;
+   font-weight: bold;
+}
+
+.ptsummary2 td{
+   width: 12em;
+   padding-top: .5em;
+   text-align: left;
+}
+
+.ptimage {
+   display: block;
+   max-height: 100px;
+   max-width: 120px;
+   width:  auto;
+   height: auto;
+}
+
+
+td.coltitle {
+   font-weight: bold;
+}
+
+#ptinfo {
+   margin-left: 0px;
+}
+
+#ptdemog {
+   margin-left: 0px;
+}
+
+#ptdemog th{
+   width: 15em;
+   padding-top: .5em;
+   text-align: left;
+   font-weight: bold;
+}
+
+#ptdemog td{
+   width: 40em;
+   padding-top: .5em;
+   text-align: left;
+}
+
+#ptins {
+   margin-left: 0px;
+}
+
+#ptins th{
+   width: 15em;
+   padding-top: .5em;
+   text-align: left;
+   font-weight: bold;
+}
+
+#ptins td{
+   width: 40em;
+   padding-top: .5em;
+   text-align: left;
+}
+
+.contactus {
+   margin-left: 0px;
+}
+
+.contactus th{
+   width: 8em;
+   padding-top: .5em;
+   text-align: left;
+   font-weight: bold;
+}
+
+.contactus td{
+   width: 40em;
+   padding-top: .5em;
+   text-align: left;
+}
+
+.tablesu {
+   border: 0;
+}
+
+.tableh {
+   font-weight: bold;
+   text-decoration: underline;
+}
+
+.tabled {
+   font-weight: normal;
+}
+
+.msgbox {
+   border: 1px solid;
+   margin: 10px 0px;
+   padding: 15px 10px 15px 50px;
+   background-repeat: no-repeat;
+   background-position: 10px center;
+ }
+
+.seltable th {
+   width: 8em;
+   text-align: left;
+   font-weight: bold;
+}
+
+.seltable td{
+   width: 20em;
+   padding-top: .5em;
+   text-align: left;
+}
+
+ 
+#actvy {
+  top:11em;
+  position:absolute;
+}
+
+ 
+/* Start printer-friendly styles */
+@media print{
+/* Set wrapper to fill page width */
+#wrapper{
+  width:100%;
+}
+
+/* Hide leftcolumn, navbar,and footer */
+#leftcolumn,
+#navbar,
+#footer{
+  display:none;
+}
+
+/* Get rid of content div margins and
+padding. Use a different font for print */
+#content{
+margin:0;
+padding:0;
+font-family:'Century Schoolbook', Times, Serif;
+font-size:1em;
+}
+
+/*End printer-friendly styles */
+}
